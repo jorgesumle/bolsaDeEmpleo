@@ -24,6 +24,28 @@ import java.io.InputStreamReader;
  * @author Jorge Maldonado Ventura 
  */
 public class Input {
+    
+    /**
+     * Introduce un número entre -128 y 127 por teclado.
+     * @param message el mensaje que aparece al preguntar por el número.
+     * @return el número introducido.
+     */
+    public static byte byteInput(String message){
+        System.out.print(message);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        boolean validAnswer = false;
+        byte value = 0;
+        while (!validAnswer){
+            try{
+                value = Byte.parseByte(br.readLine()); validAnswer = true;
+            }
+            catch(Exception e){
+                System.out.print("Por favor introduce un valor adecuado. \n>>>");
+            }
+        }
+        return value;
+    }
+    
     /**
      * Introduce una cadena alfanumérica por teclado.
      * @param message el mensaje que aparece cuando el programa pregunta por el texto.
