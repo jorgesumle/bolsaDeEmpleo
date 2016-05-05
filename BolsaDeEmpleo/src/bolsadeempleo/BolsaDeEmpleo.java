@@ -27,7 +27,14 @@ public class BolsaDeEmpleo {
             + "    1) Insertar datos.\n"
             + "    2) Realizar una consulta.\n"
             + "    3) Borrar datos.\n"
-            + "    4) Salir del programa\n>>> ";
+            + "    4) Salir del programa\n>>> ",
+    INSERTION_OPTIONS = "Elige una opción:\n"
+            + "    1) Insertar contrato.\n"
+            + "    2) Insertar curso.\n"
+            + "    3) Insertar demandante.\n"
+            + "    3) Insertar demandante.\n"
+            + "    3) Insertar demandante.\n"
+            + "    4) Volver al menú anterior.\n>>> ";
     private static DatabaseConnection databaseConnection;
     /**
      * @param args the command line arguments
@@ -44,6 +51,23 @@ public class BolsaDeEmpleo {
      * disponibles.
      */
     public static void mainMenu(){
+        byte option;
+        do{
+            option = Input.byteInput(MAIN_OPTIONS);
+            switch(option){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
+        } while(option != 4);
+    }
+    
+    public static void insertionMenu(){
         byte option;
         do{
             option = Input.byteInput(MAIN_OPTIONS);
