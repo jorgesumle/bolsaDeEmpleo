@@ -90,7 +90,12 @@ public class BolsaDeEmpleo {
                 case 2:
                     do{
                         Curso curso = new Curso(Input.input("Nombre del curso\n>>> "));
-                        curso.insert();
+                        if(!"".equals(curso.getNombreCurso())){
+                            curso.insert();
+                        } else{
+                            System.out.println("No has introducido un nombre para el curso.");
+                            break;
+                        }
                     } while(Input.yesOrNoQuestion(ANOTHER_INSERT_TEXT));
                     break;
                 case 3:

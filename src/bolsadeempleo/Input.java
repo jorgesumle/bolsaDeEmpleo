@@ -70,10 +70,8 @@ public class Input {
     public static boolean yesOrNoQuestion(String question){
         boolean response = false;
         String answer = input(question);
-        if(answer.charAt(0) == 's'){
-            response = true;
-        } else{
-            response = false;
+        if(answer.length() > 0){
+            response = answer.charAt(0) == 's';
         }
         return response;
     }

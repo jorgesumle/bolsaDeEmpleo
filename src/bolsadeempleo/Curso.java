@@ -2,17 +2,17 @@
  * Copyright (C) 2016 Jorge Maldonado Ventura
  *
  * Este programa es software libre: usted puede redistruirlo y/o modificarlo
- * bajo los términos de la Licencia Pública General GNU, tal y como está publicada por
- * la Free Software Foundation; ya sea la versión 3 de la Licencia, o
- * (a su elección) cualquier versión posterior.
+ * bajo los tÃ©rminos de la Licencia PÃºblica General GNU, tal y como estÃ¡ publicada por
+ * la Free Software Foundation; ya sea la versiÃ³n 3 de la Licencia, o
+ * (a su elecciÃ³n) cualquier versiÃ³n posterior.
  *
- * Este programa se distribuye con la intención de ser útil,
- * pero SIN NINGUNA GARANTÍA; incluso sin la garantía implícita de
+ * Este programa se distribuye con la intenciÃ³n de ser Ãºtil,
+ * pero SIN NINGUNA GARANTÃA; incluso sin la garantÃ­a implÃ­cita de
  * USABILIDAD O UTILIDAD PARA UN FIN PARTICULAR. Vea la
- * Licencia Pública General GNU para más detalles.
+ * Licencia PÃºblica General GNU para mÃ¡s detalles.
  *
- * Usted debería haber recibido una copia de la Licencia Pública General GNU
- * junto a este programa.  Si no es así, vea <http://www.gnu.org/licenses/>.
+ * Usted deberÃ­a haber recibido una copia de la Licencia PÃºblica General GNU
+ * junto a este programa.  Si no es asÃ­, vea <http://www.gnu.org/licenses/>.
  */
 package bolsadeempleo;
 
@@ -27,6 +27,10 @@ public class Curso {
 
     public Curso(String nombreCurso) {
         this.nombreCurso = nombreCurso;
+    }
+
+    public String getNombreCurso() {
+        return nombreCurso;
     }
     
     /**
