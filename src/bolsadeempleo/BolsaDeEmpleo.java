@@ -17,7 +17,6 @@
 package bolsadeempleo;
 
 import java.sql.Connection;
-import java.util.Calendar;
 
 /**
  * Clase principal.
@@ -42,9 +41,11 @@ public class BolsaDeEmpleo {
             + "    10) Insertar título oficial.\n"
             + "    11) Volver al menú anterior.\n>>> ";
     private static DatabaseConnection databaseConnection;
-    /**
-     * @param args the command line arguments
-     */
+
+    protected static DatabaseConnection getDatabaseConnection() {
+        return databaseConnection;
+    }
+    
     public static void main(String[] args) {
         databaseConnection = new DatabaseConnection("bolsaEmpleo", "root", "jdbc:mysql://localhost/");
         Connection connection = databaseConnection.connect();
@@ -86,6 +87,8 @@ public class BolsaDeEmpleo {
                 case 1:
                     break;
                 case 2:
+                    Curso curso = new Curso(Input.input("Nombre del curso\n>>> "));
+                    curso.insert();
                     break;
                 case 3:
                     break;

@@ -29,6 +29,8 @@ public class DatabaseConnection {
     private String user;
     private String password;
     private String url;
+    private Connection connection;
+    
     /**
      * Inicializa las variables necesarias para realizar la conexión
      * con una base de datos, la contraseña se debe introducir por teclado.
@@ -42,13 +44,17 @@ public class DatabaseConnection {
         this.url = url + databaseName;
         password = Input.input("Introduce tu contraseña, " + user + "\n>>> ");
     }
+
+    public Connection getConnection() {
+        return connection;
+    }
     
     /**
      * Realiza la conexión con la base de datos usando los atributos de la clase.
      * @return la conexión (Connection).
      */
     public Connection connect() {
-        Connection connection = null;
+        connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(url, user, password);

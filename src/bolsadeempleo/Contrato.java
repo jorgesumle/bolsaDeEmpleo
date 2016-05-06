@@ -19,10 +19,12 @@ package bolsadeempleo;
 import java.util.Calendar;
 
 /**
- *
+ * Un contrato que se ha producido gracias a la bolsa de empleo. Está vinculado
+ * con la tabla contratos de la base de datos.
  * @author Jorge Maldonado Ventura
  */
 public class Contrato {
+    private static final String tableName = "contratos";
     private int id;
     private int idOferta;
     private String nifOfertante;
@@ -43,13 +45,12 @@ public class Contrato {
     }
     
     /**
-     * Inserta un contrato en la base de datos.
+     * Inserta un contrato en la tabla "contratos" de la base de datos.
      */
-    public void insertContrato(){
-        String SQLCode = "INSERT INTO contratos (idOferta, nifOfertante, idDemandante, fechaInicio, fechaFin, salario, localidad) "
-                + "VALUES(" + String.format("%d, '%s', %d, '%s', ", idOferta, nifOfertante, idDemandante, fechaInicio) + ");"; 
-        //DML.updateTable(SQLCode);
+    public void insert(){
+        String SQLCode = "INSERT INTO " + tableName + " (idOferta, nifOfertante, idDemandante, fechaInicio, fechaFin, salario, localidad) "
+                + "VALUES(" + String.format("%d, '%s', %d, '%s', '%s', '%s', '%s'", idOferta, nifOfertante, idDemandante, CalendarUtils.mySQLDateFormat(fechaInicio), CalendarUtils.mySQLDateFormat(fechaFin), salario, localidad) + ");"; 
+        DML.executeUpdate(SQLCode, BolsaDeEmpleo.getDatabaseConnection().getConnection());
     }
-    
     
 }

@@ -3,17 +3,17 @@ CREATE DATABASE IF NOT EXISTS bolsaEmpleo;
 
 USE bolsaEmpleo;
 CREATE TABLE cursos(
-	idCurso INT PRIMARY KEY,
+	idCurso INT PRIMARY KEY AUTO_INCREMENT,
 	nombreCurso VARCHAR(100) 
 ); 
 
 CREATE TABLE estudios(
-	idTitulo INT PRIMARY KEY,
+	idTitulo INT PRIMARY KEY AUTO_INCREMENT,
 	nombreTitulo VARCHAR(100) 
 ); 
 
 CREATE TABLE idiomas(
-	idIdioma INT PRIMARY KEY,
+	idIdioma INT PRIMARY KEY AUTO_INCREMENT,
 	nombreIdioma VARCHAR(100) 
 );
 
@@ -23,7 +23,7 @@ CREATE TABLE ofertantes(
 );
 
 CREATE TABLE demandantes(
-	id INT PRIMARY KEY AUTO_INCREMENT ,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	dni CHAR(9) NOT NULL,
 	nombre VARCHAR(40) NOT NULL,
 	apellido1 VARCHAR(40) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE antiguosDemandantes(
 );
 
 CREATE TABLE ofertas(
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo varchar(50) NOT NULL,
 	fechaCreacion DATE,
 	descripcion VARCHAR(2000),
@@ -59,7 +59,7 @@ CREATE TABLE ofertas(
 );
 
 CREATE TABLE contratos(
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	idOferta INT,
 	nifOfertante CHAR(9),
 	idDemandante INT,
