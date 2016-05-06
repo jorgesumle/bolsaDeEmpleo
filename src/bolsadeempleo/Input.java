@@ -2,17 +2,17 @@
  * Copyright (C) 2016 Jorge Maldonado Ventura
  *
  * Este programa es software libre: usted puede redistruirlo y/o modificarlo
- * bajo los tÈrminos de la Licencia P˙blica General GNU, tal y como est· publicada por
- * la Free Software Foundation; ya sea la versiÛn 3 de la Licencia, o
- * (a su elecciÛn) cualquier versiÛn posterior.
+ * bajo los t√©rminos de la Licencia P√∫blica General GNU, tal y como est√° publicada por
+ * la Free Software Foundation; ya sea la versi√≥n 3 de la Licencia, o
+ * (a su elecci√≥n) cualquier versi√≥n posterior.
  *
- * Este programa se distribuye con la intenciÛn de ser ˙til,
- * pero SIN NINGUNA GARANTÕA; incluso sin la garantÌa implÌcita de
+ * Este programa se distribuye con la intenci√≥n de ser √∫til,
+ * pero SIN NINGUNA GARANT√çA; incluso sin la garant√≠a impl√≠cita de
  * USABILIDAD O UTILIDAD PARA UN FIN PARTICULAR. Vea la
- * Licencia P˙blica General GNU para m·s detalles.
+ * Licencia P√∫blica General GNU para m√°s detalles.
  *
- * Usted deberÌa haber recibido una copia de la Licencia P˙blica General GNU
- * junto a este programa.  Si no es asÌ, vea <http://www.gnu.org/licenses/>.
+ * Usted deber√≠a haber recibido una copia de la Licencia P√∫blica General GNU
+ * junto a este programa.  Si no es as√≠, vea <http://www.gnu.org/licenses/>.
  */
 package bolsadeempleo;
 
@@ -26,9 +26,9 @@ import java.io.InputStreamReader;
 public class Input {
     
     /**
-     * Introduce un n˙mero entre -128 y 127 por teclado.
-     * @param message el mensaje que aparece al preguntar por el n˙mero.
-     * @return el n˙mero introducido.
+     * Introduce un n√∫mero entre -128 y 127 por teclado.
+     * @param message el mensaje que aparece al preguntar por el n√∫mero.
+     * @return el n√∫mero introducido.
      */
     public static byte byteInput(String message){
         System.out.print(message);
@@ -47,7 +47,7 @@ public class Input {
     }
     
     /**
-     * Introduce una cadena alfanumÈrica por teclado.
+     * Introduce una cadena alfanum√©rica por teclado.
      * @param message el mensaje que aparece cuando el programa pregunta por el texto.
      * @return el texto introducido.
      */
@@ -65,6 +65,17 @@ public class Input {
             }
         }
         return value;
+    }
+    
+    public static boolean yesOrNoQuestion(String question){
+        boolean response = false;
+        String answer = input(question);
+        if(answer.charAt(0) == 's'){
+            response = true;
+        } else{
+            response = false;
+        }
+        return response;
     }
 
 }

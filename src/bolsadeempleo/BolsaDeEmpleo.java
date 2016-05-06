@@ -2,17 +2,17 @@
  * Copyright (C) 2016 Jorge Maldonado Ventura
  *
  * Este programa es software libre: usted puede redistruirlo y/o modificarlo
- * bajo los tÈrminos de la Licencia P˙blica General GNU, tal y como est· publicada por
- * la Free Software Foundation; ya sea la versiÛn 3 de la Licencia, o
- * (a su elecciÛn) cualquier versiÛn posterior.
+ * bajo los t√©rminos de la Licencia P√∫blica General GNU, tal y como est√° publicada por
+ * la Free Software Foundation; ya sea la versi√≥n 3 de la Licencia, o
+ * (a su elecci√≥n) cualquier versi√≥n posterior.
  *
- * Este programa se distribuye con la intenciÛn de ser ˙til,
- * pero SIN NINGUNA GARANTÕA; incluso sin la garantÌa implÌcita de
+ * Este programa se distribuye con la intenci√≥n de ser √∫til,
+ * pero SIN NINGUNA GARANT√çA; incluso sin la garant√≠a impl√≠cita de
  * USABILIDAD O UTILIDAD PARA UN FIN PARTICULAR. Vea la
- * Licencia P˙blica General GNU para m·s detalles.
+ * Licencia P√∫blica General GNU para m√°s detalles.
  *
- * Usted deberÌa haber recibido una copia de la Licencia P˙blica General GNU
- * junto a este programa.  Si no es asÌ, vea <http://www.gnu.org/licenses/>.
+ * Usted deber√≠a haber recibido una copia de la Licencia P√∫blica General GNU
+ * junto a este programa.  Si no es as√≠, vea <http://www.gnu.org/licenses/>.
  */
 package bolsadeempleo;
 
@@ -23,23 +23,23 @@ import java.sql.Connection;
  * @author Jorge Maldonado Ventura
  */
 public class BolsaDeEmpleo {
-    private static final String MAIN_OPTIONS = "øQuÈ quieres hacer?\n"
+    private static final String MAIN_OPTIONS = "¬øQu√© quieres hacer?\n"
             + "    1) Insertar datos.\n"
             + "    2) Realizar una consulta.\n"
             + "    3) Borrar datos.\n"
             + "    4) Salir del programa\n>>> ",
-    INSERTION_OPTIONS = "Elige una opciÛn:\n"
+    INSERTION_OPTIONS = "Elige una opci√≥n:\n"
             + "    1) Insertar contrato.\n"
             + "    2) Insertar curso.\n"
             + "    3) Insertar demandante.\n"
-            + "    4) AÒadir curso a demandante.\n"
-            + "    5) AÒadir tÌtulo oficial a demandante.\n"
-            + "    6) AÒadir idioma a demandante.\n"
+            + "    4) A√±adir curso a demandante.\n"
+            + "    5) A√±adir t√≠tulo oficial a demandante.\n"
+            + "    6) A√±adir idioma a demandante.\n"
             + "    7) Insertar Idioma.\n"
             + "    8) Insertar oferta.\n"
             + "    9) Insertar ofertante.\n"
-            + "    10) Insertar tÌtulo oficial.\n"
-            + "    11) Volver al men˙ anterior.\n>>> ";
+            + "    10) Insertar t√≠tulo oficial.\n"
+            + "    11) Volver al men√∫ anterior.\n>>> ";
     private static DatabaseConnection databaseConnection;
 
     protected static DatabaseConnection getDatabaseConnection() {
@@ -54,8 +54,8 @@ public class BolsaDeEmpleo {
     }
     
     /**
-     * Muestra el men˙, que permite que el usuario realice las operaciones
-     * disponibles. Cada opciÛn es un tipo de operaciÛn.
+     * Muestra el men√∫, que permite que el usuario realice las operaciones
+     * disponibles. Cada opci√≥n es un tipo de operaci√≥n.
      */
     public static void mainMenu(){
         byte option;
@@ -76,19 +76,22 @@ public class BolsaDeEmpleo {
     }
     
     /**
-     * Men˙ que permite al usuario realizar las operaciones de inserciÛn en
+     * Men√∫ que permite al usuario realizar las operaciones de inserci√≥n en
      * la base de datos.
      */
     public static void insertionMenu(){
         byte option;
+        final String ANOTHER_INSERT_TEXT = "Introduce 's' para insertar otro registro y cualquier otra tecla para volver al men√∫ anterior\n>>> ";
         do{
             option = Input.byteInput(INSERTION_OPTIONS);
             switch(option){
                 case 1:
                     break;
                 case 2:
-                    Curso curso = new Curso(Input.input("Nombre del curso\n>>> "));
-                    curso.insert();
+                    do{
+                        Curso curso = new Curso(Input.input("Nombre del curso\n>>> "));
+                        curso.insert();
+                    } while(Input.yesOrNoQuestion(ANOTHER_INSERT_TEXT));
                     break;
                 case 3:
                     break;
