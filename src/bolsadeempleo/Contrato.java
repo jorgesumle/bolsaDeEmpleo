@@ -16,10 +16,40 @@
  */
 package bolsadeempleo;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Jorge Maldonado Ventura
  */
 public class Contrato {
+    private int id;
+    private int idOferta;
+    private String nifOfertante;
+    private int idDemandante;
+    private Calendar fechaInicio;
+    private Calendar fechaFin;
+    private float salario;
+    private String localidad;
+
+    public Contrato(int idOferta, String nifOfertante, int idDemandante, Calendar fechaInicio, Calendar fechaFin, float salario, String localidad) {
+        this.idOferta = idOferta;
+        this.nifOfertante = nifOfertante;
+        this.idDemandante = idDemandante;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.salario = salario;
+        this.localidad = localidad;
+    }
+    
+    /**
+     * Inserta un contrato en la base de datos.
+     */
+    public void insertContrato(){
+        String SQLCode = "INSERT INTO contratos (idOferta, nifOfertante, idDemandante, fechaInicio, fechaFin, salario, localidad) "
+                + "VALUES(" + String.format("%d, '%s', %d, '%s', ", idOferta, nifOfertante, idDemandante, fechaInicio) + ");"; 
+        //DML.updateTable(SQLCode);
+    }
+    
     
 }
