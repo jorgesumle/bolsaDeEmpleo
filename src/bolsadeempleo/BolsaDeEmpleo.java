@@ -19,7 +19,7 @@ package bolsadeempleo;
 import java.sql.Connection;
 
 /**
- *
+ * Clase principal.
  * @author Jorge Maldonado Ventura
  */
 public class BolsaDeEmpleo {
@@ -32,13 +32,20 @@ public class BolsaDeEmpleo {
             + "    1) Insertar contrato.\n"
             + "    2) Insertar curso.\n"
             + "    3) Insertar demandante.\n"
-            + "    4) Volver al menú anterior.\n>>> ";
+            + "    4) Añadir curso a demandante.\n"
+            + "    5) Añadir título oficial a demandante.\n"
+            + "    6) Añadir idioma a demandante.\n"
+            + "    7) Insertar Idioma.\n"
+            + "    8) Insertar oferta.\n"
+            + "    9) Insertar ofertante.\n"
+            + "    10) Insertar título oficial.\n"
+            + "    11) Volver al menú anterior.\n>>> ";
     private static DatabaseConnection databaseConnection;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        DatabaseConnection databaseConnection = new DatabaseConnection("bolsaEmpleo", "root", "jdbc:mysql://localhost/");
+        databaseConnection = new DatabaseConnection("bolsaEmpleo", "root", "jdbc:mysql://localhost/");
         Connection connection = databaseConnection.connect();
         mainMenu();
         databaseConnection.disconnect(connection);
@@ -46,7 +53,7 @@ public class BolsaDeEmpleo {
     
     /**
      * Muestra el menú, que permite que el usuario realice las operaciones
-     * disponibles.
+     * disponibles. Cada opción es un tipo de operación.
      */
     public static void mainMenu(){
         byte option;
@@ -66,6 +73,10 @@ public class BolsaDeEmpleo {
         } while(option != 4);
     }
     
+    /**
+     * Menú que permite al usuario realizar las operaciones de inserción en
+     * la base de datos.
+     */
     public static void insertionMenu(){
         byte option;
         do{
@@ -79,8 +90,22 @@ public class BolsaDeEmpleo {
                     break;
                 case 4:
                     break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
             }
-        } while(option != 4);
+        } while(option != 11);
     }
     
 }
