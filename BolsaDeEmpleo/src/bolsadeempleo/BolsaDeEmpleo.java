@@ -32,15 +32,13 @@ public class BolsaDeEmpleo {
             + "    1) Insertar contrato.\n"
             + "    2) Insertar curso.\n"
             + "    3) Insertar demandante.\n"
-            + "    3) Insertar demandante.\n"
-            + "    3) Insertar demandante.\n"
             + "    4) Volver al menú anterior.\n>>> ";
     private static DatabaseConnection databaseConnection;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        DatabaseConnection databaseConnection = new DatabaseConnection("bolsaempleo", "root", "jdbc:mysql://localhost/");
+        DatabaseConnection databaseConnection = new DatabaseConnection("bolsaEmpleo", "root", "jdbc:mysql://localhost/");
         Connection connection = databaseConnection.connect();
         mainMenu();
         databaseConnection.disconnect(connection);
@@ -56,6 +54,7 @@ public class BolsaDeEmpleo {
             option = Input.byteInput(MAIN_OPTIONS);
             switch(option){
                 case 1:
+                    insertionMenu();
                     break;
                 case 2:
                     break;
@@ -70,7 +69,7 @@ public class BolsaDeEmpleo {
     public static void insertionMenu(){
         byte option;
         do{
-            option = Input.byteInput(MAIN_OPTIONS);
+            option = Input.byteInput(INSERTION_OPTIONS);
             switch(option){
                 case 1:
                     break;
