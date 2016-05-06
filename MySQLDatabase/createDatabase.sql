@@ -4,17 +4,17 @@ CREATE DATABASE IF NOT EXISTS bolsaEmpleo;
 USE bolsaEmpleo;
 CREATE TABLE cursos(
 	idCurso INT PRIMARY KEY AUTO_INCREMENT,
-	nombreCurso VARCHAR(100) 
+	nombreCurso VARCHAR(100) NOT NULL 
 ); 
 
 CREATE TABLE estudios(
 	idTitulo INT PRIMARY KEY AUTO_INCREMENT,
-	nombreTitulo VARCHAR(100) 
+	nombreTitulo VARCHAR(100) NOT NULL 
 ); 
 
 CREATE TABLE idiomas(
 	idIdioma INT PRIMARY KEY AUTO_INCREMENT,
-	nombreIdioma VARCHAR(100) 
+	nombreIdioma VARCHAR(100) NOT NULL 
 );
 
 CREATE TABLE ofertantes(
