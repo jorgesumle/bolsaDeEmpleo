@@ -35,11 +35,25 @@ public class BolsaDeEmpleo {
             + "    4) Añadir curso a demandante.\n"
             + "    5) Añadir título oficial a demandante.\n"
             + "    6) Añadir idioma a demandante.\n"
-            + "    7) Insertar Idioma.\n"
+            + "    7) Insertar idioma.\n"
             + "    8) Insertar oferta.\n"
             + "    9) Insertar ofertante.\n"
             + "    10) Insertar título oficial.\n"
-            + "    11) Volver al menú anterior.\n>>> ";
+            + "    11) Volver al menú anterior.\n>>> ",
+    DELETION_OPTIONS = "Elige una opción:\n"
+            + "    1) Borrar contrato.\n"
+            + "    2) Borrar curso.\n"
+            + "    3) Borrar demandante.\n"
+            + "    4) Borrar curso de demandante.\n"
+            + "    5) Borrar título oficial de demandante.\n"
+            + "    6) Borrar idioma de demandante.\n"
+            + "    7) Borrar idioma.\n"
+            + "    8) Borrar oferta.\n"
+            + "    9) Borrar ofertante.\n"
+            + "    10) Borrar título oficial.\n"
+            + "    11) Volver al menú anterior.\n";
+            
+            
     private static DatabaseConnection databaseConnection;
 
     protected static DatabaseConnection getDatabaseConnection() {
@@ -68,6 +82,7 @@ public class BolsaDeEmpleo {
                 case 2:
                     break;
                 case 3:
+                    deletionMenu();
                     break;
                 case 4:
                     break;
@@ -90,13 +105,53 @@ public class BolsaDeEmpleo {
                 case 2:
                     do{
                         Curso curso = new Curso(Input.input("Nombre del curso\n>>> "));
-                        if(!"".equals(curso.getNombreCurso())){
-                            curso.insert();
-                        } else{
-                            System.out.println("No has introducido un nombre para el curso.");
-                            break;
-                        }
+                        curso.insert();
                     } while(Input.yesOrNoQuestion(ANOTHER_INSERT_TEXT));
+                    break;
+                case 3:
+                    do{
+                        Demandante demandante = new Demandante(Input.input("DNI\n>>> "), 
+                                Input.input("Nombre\n>>>"), 
+                                Input.input("Primer apellido\n>>> "), 
+                                Input.input("Segundo apellido\n>>> "), 
+                                Input.input("Dirección\n>>> "), 
+                                Input.input("Correo electrónico\n>>> "), 
+                                CalendarUtils.createCalendarDate(Input.byteInput("Día de nacimiento\n>>> "), 
+                                        Input.byteInput("Mes de nacimiento\n>>> "), 
+                                        Input.shortInput("Año de nacimiento\n>>> ")),
+                                Input.input("Consideraciones\n>>> "));
+                                demandante.insert();
+                    } while(Input.yesOrNoQuestion(ANOTHER_INSERT_TEXT));
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+            }
+        } while(option != 11);
+    }
+
+    private static void deletionMenu() {
+        byte option;
+        do{
+            option = Input.byteInput(DELETION_OPTIONS);
+            switch(option){
+                case 1: 
+                    break;
+                case 2:
+                    Curso curso = new Curso(Input.input("Nombre del curso\n>>> "));
                     break;
                 case 3:
                     break;

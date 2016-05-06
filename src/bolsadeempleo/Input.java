@@ -49,6 +49,7 @@ public class Input {
     /**
      * Introduce una cadena alfanumérica por teclado.
      * @param message el mensaje que aparece cuando el programa pregunta por el texto.
+     * No permite la introducción de una cadena vacía.
      * @return el texto introducido.
      */
     public static String input(String message){
@@ -58,7 +59,52 @@ public class Input {
         String value = "";
         while (!validAnswer){
             try{
-                value = br.readLine(); validAnswer = true;
+                value = br.readLine(); 
+                if(!message.equals("")){
+                    validAnswer = true;
+                }
+            }
+            catch(Exception e){
+                System.out.print("Por favor introduce un valor adecuado. \n>>>");
+            }
+        }
+        return value;
+    }
+    
+    /**
+     * Introduce un número entre -2 147 483 648 y 2 147 483 647 por teclado.
+     * @param message el mensaje que aparece al preguntar por el número.
+     * @return el número introducido.
+     */
+    public static int intInput(String message){
+        System.out.print(message);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        boolean validAnswer = false;
+        int value = 0;
+        while (!validAnswer){
+            try{
+                value = Integer.parseInt(br.readLine()); validAnswer = true;
+            }
+            catch(Exception e){
+                System.out.print("Por favor introduce un valor adecuado. \n>>>");
+            }
+        }
+        return value;
+    }
+    
+    /**
+     * Introduce un número entre -32 768 y 32 767 por teclado.
+     * @param message el mensaje que aparece al preguntar por el número.
+     * @return el número introducido.
+     */
+    public static short shortInput(String message){
+        System.out.print(message);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        boolean validAnswer = false;
+        short value = 0;
+        while (!validAnswer){
+            try{
+                value = Short.parseShort(br.readLine()); validAnswer = true;
             }
             catch(Exception e){
                 System.out.print("Por favor introduce un valor adecuado. \n>>>");
