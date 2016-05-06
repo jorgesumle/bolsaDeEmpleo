@@ -2,17 +2,17 @@
  * Copyright (C) 2016 Jorge Maldonado Ventura
  *
  * Este programa es software libre: usted puede redistruirlo y/o modificarlo
- * bajo los tÈrminos de la Licencia P˙blica General GNU, tal y como est· publicada por
- * la Free Software Foundation; ya sea la versiÛn 3 de la Licencia, o
- * (a su elecciÛn) cualquier versiÛn posterior.
+ * bajo los t√©rminos de la Licencia P√∫blica General GNU, tal y como est√° publicada por
+ * la Free Software Foundation; ya sea la versi√≥n 3 de la Licencia, o
+ * (a su elecci√≥n) cualquier versi√≥n posterior.
  *
- * Este programa se distribuye con la intenciÛn de ser ˙til,
- * pero SIN NINGUNA GARANTÕA; incluso sin la garantÌa implÌcita de
+ * Este programa se distribuye con la intenci√≥n de ser √∫til,
+ * pero SIN NINGUNA GARANT√çA; incluso sin la garant√≠a impl√≠cita de
  * USABILIDAD O UTILIDAD PARA UN FIN PARTICULAR. Vea la
- * Licencia P˙blica General GNU para m·s detalles.
+ * Licencia P√∫blica General GNU para m√°s detalles.
  *
- * Usted deberÌa haber recibido una copia de la Licencia P˙blica General GNU
- * junto a este programa.  Si no es asÌ, vea <http://www.gnu.org/licenses/>.
+ * Usted deber√≠a haber recibido una copia de la Licencia P√∫blica General GNU
+ * junto a este programa.  Si no es as√≠, vea <http://www.gnu.org/licenses/>.
  */
 package bolsadeempleo;
 
@@ -20,14 +20,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- * MÈtodos utiles para la manipulaciÛn de objetos Calendar.
+ * M√©todos utiles para la manipulaci√≥n de objetos Calendar.
  * @author Jorge Maldonado Ventura
  */
 public class CalendarUtils {
     
     /**
      * Devuelve el formato para el tipo date de MySQL en forma de cadena. Solo
-     * transforma la fecha, con lo cual se pierde precisiÛn.
+     * transforma la fecha, con lo cual se pierde precisi√≥n.
      * @param calendar el objeto Calendar que se quiere pasar a formato de MySQL para fechas (date).
      * @return el formato para MySQL del objeto Calendar. 
      */
@@ -37,12 +37,12 @@ public class CalendarUtils {
     }
     
     /**
-     * Crea un objeto calendar para una fecha del calendario. Pierde precisiÛn para
+     * Crea un objeto calendar para una fecha del calendario. Pierde precisi√≥n para
      * las horas, minutos segundos, etc.
-     * @param day el dÌa.
+     * @param day el d√≠a.
      * @param month el mes.
-     * @param year el aÒo.
-     * @return el objeto calendar con precisiÛn de fecha de calendario.
+     * @param year el a√±o.
+     * @return el objeto calendar con precisi√≥n de fecha de calendario.
      */
     protected static Calendar createCalendarDate(byte day, byte month, int year){
         Calendar cal = Calendar.getInstance();

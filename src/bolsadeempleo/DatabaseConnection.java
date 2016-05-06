@@ -2,17 +2,17 @@
  * Copyright (C) 2016 Jorge Maldonado Ventura
  *
  * Este programa es software libre: usted puede redistruirlo y/o modificarlo
- * bajo los tÈrminos de la Licencia P˙blica General GNU, tal y como est· publicada por
- * la Free Software Foundation; ya sea la versiÛn 3 de la Licencia, o
- * (a su elecciÛn) cualquier versiÛn posterior.
+ * bajo los t√©rminos de la Licencia P√∫blica General GNU, tal y como est√° publicada por
+ * la Free Software Foundation; ya sea la versi√≥n 3 de la Licencia, o
+ * (a su elecci√≥n) cualquier versi√≥n posterior.
  *
- * Este programa se distribuye con la intenciÛn de ser ˙til,
- * pero SIN NINGUNA GARANTÕA; incluso sin la garantÌa implÌcita de
+ * Este programa se distribuye con la intenci√≥n de ser √∫til,
+ * pero SIN NINGUNA GARANT√çA; incluso sin la garant√≠a impl√≠cita de
  * USABILIDAD O UTILIDAD PARA UN FIN PARTICULAR. Vea la
- * Licencia P˙blica General GNU para m·s detalles.
+ * Licencia P√∫blica General GNU para m√°s detalles.
  *
- * Usted deberÌa haber recibido una copia de la Licencia P˙blica General GNU
- * junto a este programa.  Si no es asÌ, vea <http://www.gnu.org/licenses/>.
+ * Usted deber√≠a haber recibido una copia de la Licencia P√∫blica General GNU
+ * junto a este programa.  Si no es as√≠, vea <http://www.gnu.org/licenses/>.
  */
 package bolsadeempleo;
 
@@ -32,8 +32,8 @@ public class DatabaseConnection {
     private Connection connection;
     
     /**
-     * Inicializa las variables necesarias para realizar la conexiÛn
-     * con una base de datos, la contraseÒa se debe introducir por teclado.
+     * Inicializa las variables necesarias para realizar la conexi√≥n
+     * con una base de datos, la contrase√±a se debe introducir por teclado.
      * @param databaseName el nombre de la base de datos.
      * @param user el usuario de la base de datos.
      * @param url la URL de la base de datos sin el nombre de la base de datos.
@@ -42,7 +42,7 @@ public class DatabaseConnection {
         this.databaseName = databaseName;
         this.user = user;
         this.url = url + databaseName;
-        password = Input.input("Introduce tu contraseÒa, " + user + "\n>>> ");
+        password = Input.input("Introduce tu contrase√±a, " + user + "\n>>> ");
     }
 
     public Connection getConnection() {
@@ -50,8 +50,8 @@ public class DatabaseConnection {
     }
     
     /**
-     * Realiza la conexiÛn con la base de datos usando los atributos de la clase.
-     * @return la conexiÛn (Connection).
+     * Realiza la conexi√≥n con la base de datos usando los atributos de la clase.
+     * @return la conexi√≥n (Connection).
      */
     public Connection connect() {
         connection = null;
@@ -59,7 +59,7 @@ public class DatabaseConnection {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(url, user, password);
             if (connection != null) {
-                System.out.println("ConexiÛn con la base de datos " + databaseName + " realizada con Èxito");
+                System.out.println("Conexi√≥n con la base de datos " + databaseName + " realizada con √©xito");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,7 +69,7 @@ public class DatabaseConnection {
     
     /**
      * Se desconecta de la base de datos.
-     * @param connection la conexiÛn de la base de datos.
+     * @param connection la conexi√≥n de la base de datos.
      */
     public void disconnect(Connection connection){
         try {
