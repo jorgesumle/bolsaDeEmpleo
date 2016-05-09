@@ -43,6 +43,38 @@ public class Demandante {
         this.fechaNacimiento = fechaNacimiento;
         this.consideraciones = consideraciones;
     }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido1() {
+        return apellido1;
+    }
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Calendar getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public String getConsideraciones() {
+        return consideraciones;
+    }
     
     /**
      * Inserta un registro en la tabla de demandantes.

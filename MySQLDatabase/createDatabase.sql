@@ -24,7 +24,7 @@ CREATE TABLE ofertantes(
 
 CREATE TABLE demandantes(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	dni CHAR(9) NOT NULL,
+	dni CHAR(9) UNIQUE NOT NULL,
 	nombre VARCHAR(40) NOT NULL,
 	apellido1 VARCHAR(40) NOT NULL,
 	apellido2 VARCHAR(40),

@@ -16,7 +16,12 @@
  */
 package bolsadeempleo;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Clase principal.
@@ -120,7 +125,22 @@ public class BolsaDeEmpleo {
                                         Input.byteInput("Mes de nacimiento\n>>> "), 
                                         Input.shortInput("Año de nacimiento\n>>> ")),
                                 Input.input("Consideraciones\n>>> "));
-                                demandante.insert();
+                        CallableStatement insertJobseeker;
+                    try {
+                        insertJobseeker = databaseConnection.getConnection().prepareCall("{ CALL insertJobseeker(?,?,?,?,?,?,?,?) }");
+                        insertJobseeker.setString("dniParam", demandante.getDni());
+                        insertJobseeker.setString("nombre", demandante.getNombre());
+                        insertJobseeker.setString("apellido1", demandante.getApellido1());
+                        insertJobseeker.setString("apellido2", demandante.getApellido2());
+                        insertJobseeker.setString("direccion", demandante.getDireccion());
+                        insertJobseeker.setString("email", demandante.getEmail());
+                        insertJobseeker.setDate("fechaNacimiento", new java.sql.Date(demandante.getFechaNacimiento().getTime().getTime()), demandante.getFechaNacimiento());
+                        insertJobseeker.setString("consideraciones", demandante.getConsideraciones());
+                        insertJobseeker.execute();
+                        databaseConnection.getConnection().commit();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(BolsaDeEmpleo.class.getName()).log(Level.SEVERE, null, ex);
+                    }   
                     } while(Input.yesOrNoQuestion(ANOTHER_INSERT_TEXT));
                     break;
                 case 4:
