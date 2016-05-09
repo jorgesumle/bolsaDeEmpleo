@@ -127,6 +127,7 @@ public class BolsaDeEmpleo {
                                 Input.input("Consideraciones\n>>> "));
                         CallableStatement insertJobseeker;
                     try {
+                        databaseConnection.getConnection().setAutoCommit(false);
                         insertJobseeker = databaseConnection.getConnection().prepareCall("{ CALL insertJobseeker(?,?,?,?,?,?,?,?) }");
                         insertJobseeker.setString("dniParam", demandante.getDni());
                         insertJobseeker.setString("nombre", demandante.getNombre());
