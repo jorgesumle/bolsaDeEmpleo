@@ -132,5 +132,29 @@ public class Input {
             return emailInput(text);
         }
     }
+    
+    static String nifInput(String text){
+        boolean validDni = false;
+        String dni;
+        final String LETTERS = "TRWAGMYFPDXBNJZSQVHLCKET";
+        
+        do{
+            dni = Input.input(text);
+            int number;
+            try{
+                number = Integer.parseInt(dni.substring(0, dni.length() - 1));    
+            } catch(Exception e){
+                System.out.println("No has introducido un número válido");
+                continue;
+            }
+            if(number > 0 && number < 99999999){
+                byte remainder = (byte)(number % 23);
+                if(dni.charAt(dni.length() - 1) == LETTERS.charAt(remainder)){
+                    validDni = true;
+                }
+            }
+        }while(!validDni);
+        return dni;
+    }
 
 }

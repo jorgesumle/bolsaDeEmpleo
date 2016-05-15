@@ -114,7 +114,7 @@ public class BolsaDeEmpleo {
                     break;
                 case 3:
                     do{
-                        Demandante demandante = new Demandante(Input.input("DNI\n>>> "), 
+                        Demandante demandante = new Demandante(Input.nifInput("DNI\n>>> "), 
                                 Input.input("Nombre\n>>>"), 
                                 Input.input("Primer apellido\n>>> "), 
                                 Input.input("Segundo apellido\n>>> "), 
