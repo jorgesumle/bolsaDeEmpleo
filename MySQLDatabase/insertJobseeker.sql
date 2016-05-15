@@ -9,7 +9,6 @@ BEGIN
 		BEGIN
 			SELECT existsUser;
 			INSERT INTO demandantes(dni, nombre, apellido1, apellido2, direccion, email, fechaNacimiento, consideraciones) SELECT dni, nombre, apellido1, apellido2, direccion, email, fechaNacimiento, consideraciones FROM antiguosDemandantes;
-			SELECT 'Lucas 2';
 			DELETE FROM antiguosDemandantes WHERE dni = dniParam;
 		END;
 	END IF;
