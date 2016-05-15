@@ -19,7 +19,6 @@ package bolsadeempleo;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -120,7 +119,7 @@ public class BolsaDeEmpleo {
                                 Input.input("Primer apellido\n>>> "), 
                                 Input.input("Segundo apellido\n>>> "), 
                                 Input.input("Dirección\n>>> "), 
-                                Input.input("Correo electrónico\n>>> "), 
+                                Input.emailInput("Correo electrónico\n>>> "), 
                                 CalendarUtils.createCalendarDate(Input.byteInput("Día de nacimiento\n>>> "), 
                                         Input.byteInput("Mes de nacimiento\n>>> "), 
                                         Input.shortInput("Año de nacimiento\n>>> ")),
